@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatchOctocat.Core", "CatchOctocat.Core\CatchOctocat.Core.csproj", "{202EE213-56BB-48D8-A4AA-AB7CF3761315}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHost", "WpfHost\WpfHost.csproj", "{69696910-E1BE-45C4-845E-8AD966E33B28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{202EE213-56BB-48D8-A4AA-AB7CF3761315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202EE213-56BB-48D8-A4AA-AB7CF3761315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202EE213-56BB-48D8-A4AA-AB7CF3761315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202EE213-56BB-48D8-A4AA-AB7CF3761315}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69696910-E1BE-45C4-845E-8AD966E33B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69696910-E1BE-45C4-845E-8AD966E33B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69696910-E1BE-45C4-845E-8AD966E33B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69696910-E1BE-45C4-845E-8AD966E33B28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {044DC264-00CD-4AF6-B884-47CC724E00E8}
+	EndGlobalSection
+EndGlobal

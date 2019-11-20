@@ -1,0 +1,14 @@
+﻿<Window x:Class="CatchOctocat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatchOctocat"
+        mc:Ignorable="d"
+        Title="Catch The Octocats If You Can!" Height="768" Width="1024">
+    <Grid Background="Black">
+        <Button Name="buttonReset" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 20, 0, 0" Click="buttonReset_Tapped" >Reset the board</Button>
+        <Canvas Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50,50,50,50">
+        </Canvas>
+    </Grid>
+</Window>
