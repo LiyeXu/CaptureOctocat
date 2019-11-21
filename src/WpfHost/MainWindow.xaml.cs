@@ -21,14 +21,15 @@ namespace CatchOctocat
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Game = new Game(boardSize: 21, numOfCats: 3, RefreshBoardView);
+            Game = new Game(boardSize: 32, numOfCats: 8, lowerBoundBlockingRate: 0.25, upperBoundBlockingRate: 0.33, RefreshBoardView);
             InitializeBoardView();
         }
 
         private void InitializeBoardView()
         {
-            int nodeHeight = (int)(canvas.RenderSize.Height / Game.BoardSize);
-            int nodeWidth = nodeHeight;
+            int gap = 10;
+            int nodeWidth = (int)((canvas.RenderSize.Width - gap * Game.BoardSize) / Game.BoardSize);
+            int nodeHeight = nodeWidth ;
             for (int i = 0; i < Game.BoardSize; i++)
             {
                 for (int j = 0; j < Game.BoardSize; j++)
@@ -42,8 +43,7 @@ namespace CatchOctocat
                     node.Height = nodeHeight;
                     node.Width = nodeWidth;
                     node.MouseDown += node_Tapped;
-                    int gap = 10;
-                    int leftPad = 50 + ((i & 1) == 0 ? 0 : (nodeWidth + gap) / 2);
+                    int leftPad = (int)Margin.Left + ((i & 1) == 0 ? 0 : (nodeWidth + gap) / 2);
                     node.Margin = new Thickness(leftPad + j * (nodeWidth + gap), i * nodeHeight, 0, 0);
                     canvas.Children.Add(node);
                     RegisterName(node.Name, node);
@@ -69,19 +69,19 @@ namespace CatchOctocat
 
         private Brush GetNodeTapedBrush()
         {
-            return new SolidColorBrush(Colors.Orange);
+            return new SolidColorBrush(Colors.Black);
         }
 
         private Brush GetNodeBrush(int i, int j)
         {
             return Game.Board[i, j] ?
                         GetNodeTapedBrush() :
-                        Game.Cats.Count(c => c.EscapePath.Contains(new Tuple<int, int>(i, j))) != 0 ? new SolidColorBrush(Colors.Yellow) : new SolidColorBrush(Colors.Gray);
+                        Game.Cats.Count(c => c.EscapePath.Contains(new Tuple<int, int>(i, j))) != 0 ? new SolidColorBrush(Colors.LemonChiffon) : new SolidColorBrush(Colors.Gray);
         }
 
         private Brush GetCatBrush(Octocat cat)
         {
-            return new SolidColorBrush(cat.IsEnclosed ? Colors.Purple : Colors.GreenYellow);
+            return new SolidColorBrush(cat.IsEnclosed ? Colors.Purple : Colors.Orange);
         }
 
         private void RefreshBoardView()

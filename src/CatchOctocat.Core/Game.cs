@@ -8,6 +8,10 @@ namespace CatchOctocat
     {
         private Random Rand { get; set; } = new Random((int)DateTime.Now.Ticks);
 
+        private double LowerBoundBlockingRate { get; set; } = 0.2;
+
+        private double UpperBoundBlockingRate { get; set; } = 0.25;
+
         public int BoardSize { get; set; } = 21;
         public int NumOfCats { get; set; } = 3;
         
@@ -34,11 +38,21 @@ namespace CatchOctocat
             get;
             set;
         }
+               
+        public Game(int boardSize, int numOfCats, double lowerBoundBlockingRate, double upperBoundBlockingRate, Action onCatMove)
+        {
+            LowerBoundBlockingRate = lowerBoundBlockingRate;
+            UpperBoundBlockingRate = upperBoundBlockingRate;
+            BoardSize = boardSize;
+            NumOfCats = numOfCats;
+            OnCatMove = onCatMove;
+            Reset();
+        }
 
         public void Reset()
         {
             Board = new bool[BoardSize, BoardSize];
-            int numOfBlocks = Rand.Next(BoardSize * BoardSize / 5, BoardSize * BoardSize / 4);
+            int numOfBlocks = Rand.Next((int)(BoardSize * BoardSize * LowerBoundBlockingRate), (int)(BoardSize * BoardSize * UpperBoundBlockingRate));
             for (int i = 0; i < numOfBlocks; i++)
             {
                 int row = Rand.Next(0, BoardSize);
@@ -71,14 +85,6 @@ namespace CatchOctocat
                 };
             }
             Steps = 0;
-        }
-
-        public Game(int boardSize, int numOfCats, Action onCatMove)
-        {
-            BoardSize = boardSize;
-            NumOfCats = numOfCats;
-            OnCatMove = onCatMove;
-            Reset();
         }
 
         private bool IsEscaped(int row, int column)

@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Catch The Octocats If You Can!" Height="768" Width="1024">
     <Grid Background="Black">
-        <Button Name="buttonReset" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 20, 0, 0" Click="buttonReset_Tapped" >Reset the board</Button>
-        <Canvas Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50,50,50,50">
+        <Button Name="buttonReset" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 20, 0, 0" Click="buttonReset_Tapped" >Reset the board</Button>
+        <Canvas Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20,60,20,20">
         </Canvas>
     </Grid>
 </Window>
