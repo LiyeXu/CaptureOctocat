@@ -21,15 +21,15 @@ namespace CatchOctocat
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Game = new Game(boardSize: 32, numOfCats: 8, lowerBoundBlockingRate: 0.25, upperBoundBlockingRate: 0.33, RefreshBoardView);
+            Game = new Game(boardSize: 21, numOfCats: 3, lowerBoundBlockingRate: 0.2, upperBoundBlockingRate: 0.25, RefreshBoardView);
             InitializeBoardView();
         }
 
         private void InitializeBoardView()
         {
             int gap = 10;
-            int nodeWidth = (int)((canvas.RenderSize.Width - gap * Game.BoardSize) / Game.BoardSize);
-            int nodeHeight = nodeWidth ;
+            int nodeWidth = (int)((canvas.RenderSize.Width - gap * Game.BoardSize - Margin.Left) / Game.BoardSize);
+            int nodeHeight = (int)(nodeWidth * 0.95);
             for (int i = 0; i < Game.BoardSize; i++)
             {
                 for (int j = 0; j < Game.BoardSize; j++)

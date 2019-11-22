@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatchOctocat"
         mc:Ignorable="d"
-        Title="Catch The Octocats If You Can!" Height="768" Width="1024">
+        Title="Catch The Octocats If You Can!" Height="768" Width="1024" MaxHeight="768" MaxWidth="1024">
     <Grid Background="Black">
-        <Button Name="buttonReset" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 20, 0, 0" Click="buttonReset_Tapped" >Reset the board</Button>
-        <Canvas Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20,60,20,20">
+        <Button Name="buttonReset" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 10, 0, 0" Click="buttonReset_Tapped" >Reset the board</Button>
+        <Canvas Name="canvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50,50,50,50">
         </Canvas>
     </Grid>
 </Window>
