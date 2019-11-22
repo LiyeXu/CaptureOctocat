@@ -21,7 +21,7 @@ namespace CatchOctocat
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Game = new Game(boardSize: 21, numOfCats: 3, lowerBoundBlockingRate: 0.2, upperBoundBlockingRate: 0.25, RefreshBoardView);
+            Game = new Game(boardSize: 41, numOfCats: 16, lowerBoundBlockingRate: 0.2, upperBoundBlockingRate: 0.25, RefreshBoardView);
             InitializeBoardView();
         }
 
